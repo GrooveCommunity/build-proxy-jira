@@ -11,6 +11,7 @@ spec:
   ports:
     - name: http
       port: APP_PORT
+      nodePort: NODE_PORT
 ---
 apiVersion: v1
 kind: ServiceAccount
