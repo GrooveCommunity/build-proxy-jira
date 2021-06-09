@@ -87,15 +87,3 @@ jobs:
     - name: Fazendo deploy do serviço
       run: |-
         kubectl apply -f service.yml -n paygo
-
-    - name: Fazendo deploy do gateway
-      run: |-
-        kubectl apply -f gateway.yml -n paygo 
-
-    - name: Replace APP PORT
-      run: |-
-        sed -i 's/APP_PORT/${{ env.APP_PORT }}/g' virtual-service.yml
-
-    - name: Fazendo deploy do Virtual Service
-      run: |-
-        kubectl apply -f virtual-service.yml -n paygo 
