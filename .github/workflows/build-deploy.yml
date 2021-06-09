@@ -11,7 +11,7 @@ env:
   GKE_CLUSTER: noc
   IMAGE: proxy-jira
   APP_PORT: 9275
-  NODE_PORT: 32978
+  NODE_PORT: 31978
   MAIN_REPO_NAME: proxy-jira
 
 jobs:
