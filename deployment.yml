@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proxy-jira
+  labels:
+    app: proxy-jira
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: proxy-jira
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: proxy-jira
+        version: v1
+    spec:
+      containers:
+      - name: proxy-jira
+        image: gcr.io/monitoria-groovetech/proxy-jira:TAG_IMAGE
+        ports:
+        - containerPort: APP_PORT
+        livenessProbe:
+          httpGet:
+            path: /proxy-jira/healthy
+            port: APP_PORT
+            initialDelaySeconds: 3
+            periodSeconds: 3
+

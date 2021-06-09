@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: proxy-jira
+  labels:
+    app: proxy-jira
+    service: proxy-jira
+spec:
+  selector:
+    app: proxy-jira
+  ports:
+    - name: http
+      port: APP_PORT
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: proxy-jira
+  labels:
+    account: proxy-jira
