@@ -12,6 +12,6 @@ spec:
       protocol: HTTPS
     tls:
       mode: SIMPLE
-      credentialName: lb-tls
+      credentialName: dispatcher-tls
     hosts:
     - "*"
