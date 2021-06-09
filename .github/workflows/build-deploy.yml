@@ -82,7 +82,7 @@ jobs:
     - name: Replace APP PORT
       run: |-
         sed -i 's/APP_PORT/${{ env.APP_PORT }}/g' service.yml
-        sed -i 's/NODE_PORT/${{ env.NODE_PORT }}/g' deployment.yml
+        sed -i 's/NODE_PORT/${{ env.NODE_PORT }}/g' service.yml
 
     - name: Fazendo deploy do serviço
       run: |-
