@@ -10,9 +10,9 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /proxy-jira/healthy
+        prefix: /proxyjira/healthy
     - uri:
-        prefix: /proxy-jira/webhook
+        prefix: /proxyjira/webhook
     route:
     - destination:
         host: proxy-jira
