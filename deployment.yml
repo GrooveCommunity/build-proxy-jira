@@ -24,7 +24,7 @@ spec:
         - containerPort: APP_PORT
         livenessProbe:
           httpGet:
-            path: /proxyjira/healthy
+            path: /proxy-jira/healthy
             port: APP_PORT
           initialDelaySeconds: 3
           periodSeconds: 3
