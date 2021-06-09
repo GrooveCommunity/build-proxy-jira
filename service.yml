@@ -6,13 +6,11 @@ metadata:
     app: proxy-jira
     service: proxy-jira
 spec:
-  type: NodePort
   selector:
     app: proxy-jira
   ports:
     - name: http
       port: APP_PORT
-      nodePort: NODE_PORT
 ---
 apiVersion: v1
 kind: ServiceAccount
