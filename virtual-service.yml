@@ -6,7 +6,7 @@ spec:
   hosts:
   - "*"
   gateways:
-  - proxy-jira-gateway
+  - noc-gateway
   http:
   - match:
     - uri:
