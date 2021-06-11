@@ -71,7 +71,7 @@ jobs:
 
     - name: Create IP Load Balancer
       run: |-
-        gcloud compute addresses create lb-jira-proxy
+        gcloud compute addresses create lb-jira-proxy --global
 
     - name: Replace image tag and APP PORT
       run: |-
