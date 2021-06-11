@@ -71,7 +71,7 @@ jobs:
 
     - name: Create IP Load Balancer
       run: |-
-        gcloud compute addresses create lb-jira-proxy --global 2> /dev/null
+        gcloud compute addresses create lb-jira-proxy --global 
       continue-on-error: true
 
     - name: Replace image tag and APP PORT
@@ -91,10 +91,6 @@ jobs:
     - name: Create cert
       run: |-
         kubectl apply -f certificate.yml -n paygo
-
-    - name: Configure Backend config
-      run: |- 
-        kubectl apply -f jira-backendconfig.yml -n paygo
 
     - name: Service deploy
       run: |-
