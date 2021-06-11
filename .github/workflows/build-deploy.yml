@@ -71,7 +71,7 @@ jobs:
 
     - name: Create IP Load Balancer
       run: |-
-        if [[ $(gcloud compute addresses describe lb-jira-proxys --global 2> /dev/null) > 0 ]] ; then $(gcloud compute addresses create lb-jira-proxy --global); else echo "Já existe um endereço registrado"; fi
+        if [[ $(gcloud compute addresses describe lb-jira-proxys --global 2> /dev/null) > 0 ]] ; then echo "Já existe um endereço registrado"; else $(gcloud compute addresses create lb-jira-proxy --global)); fi
 
     - name: Replace image tag and APP PORT
       run: |-
@@ -90,6 +90,10 @@ jobs:
     - name: Create cert
       run: |-
         kubectl apply -f certificate.yml -n paygo
+
+    - name: Configure Backend config
+      run: |- 
+        kubectl apply -f jira-backendconfig.yml -n paygo
 
     - name: Service deploy
       run: |-
