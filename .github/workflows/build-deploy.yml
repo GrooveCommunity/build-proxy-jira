@@ -71,7 +71,7 @@ jobs:
 
     - name: Create IP Load Balancer
       run: |-
-        gcloud compute addresses create lb-jira-proxy --global
+        if [[ $(gcloud compute addresses describe lb-jira-proxys --global 2> /dev/null) > 0 ]] ; then $(gcloud compute addresses create lb-jira-proxy --global); else echo "Já existe um endereço registrado"; fi
 
     - name: Replace image tag and APP PORT
       run: |-
