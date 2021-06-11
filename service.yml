@@ -11,10 +11,12 @@ spec:
   ports:
     - name: http
       port: APP_PORT
+      protocol: TCP
+  type: NodePort
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: proxy-jira
   labels:
-    account: proxy-jira
+    account: proxy-jiraproxy-jira-jira
