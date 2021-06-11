@@ -9,9 +9,9 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_REGION: us-central1
   GKE_CLUSTER: noc
-  IMAGE: proxy-jira
+  IMAGE: jira-proxy
   APP_PORT: 9275
-  MAIN_REPO_NAME: proxy-jira
+  MAIN_REPO_NAME: jira-proxy
 
 jobs:
   build_and_deploy_docker:
