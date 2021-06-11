@@ -83,10 +83,14 @@ jobs:
         sed -i 's/APP_PORT/${{ env.APP_PORT }}/g' service.yml
         sed -i 's/APP_PORT/${{ env.APP_PORT }}/g' ingress.yml
 
-    - name: Fazendo deploy do serviço
+    - name: Create cert
+      run: |-
+        kubectl apply -f certificate.yml -n paygo
+
+    - name: Service deploy
       run: |-
         kubectl apply -f service.yml -n paygo
 
-    - name: Fazendo deploy do ingress
+    - name: Ingress deploy
       run: |-
         kubectl apply -f ingress.yml -n paygo

@@ -1,8 +1,12 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: proxy-jira-ingress
+  name: jira-proxy
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: address-lb-jira-proxy
+    networking.gke.io/managed-certificates: jira-proxy
+    kubernetes.io/ingress.class: "gce"
 spec: 
   backend: 
-    serviceName: proxy-jira
-    servicePort: APP_PORT
+    serviceName: jira-proxy
+    servicePort: 80
