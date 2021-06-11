@@ -69,6 +69,10 @@ jobs:
       run: |-
         gcloud container clusters get-credentials "$GKE_CLUSTER" --region us-central1
 
+    - name: Create IP Load Balancer
+      run: |-
+        gcloud compute addresses create lb-jira-proxy
+
     - name: Replace image tag and APP PORT
       run: |-
         sed -i 's/APP_PORT/${{ env.APP_PORT }}/g' deployment.yml

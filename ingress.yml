@@ -3,10 +3,14 @@ kind: Ingress
 metadata:
   name: jira-proxy
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: address-lb-jira-proxy
+    kubernetes.io/ingress.global-static-ip-name: lb-jira-proxy
     networking.gke.io/managed-certificates: jira-proxy
     kubernetes.io/ingress.class: "gce"
 spec: 
-  backend: 
-    serviceName: jira-proxy
-    servicePort: 80
+  rules:
+  - http: 
+     paths: 
+     - path: /healthy
+       backend: 
+        serviceName: jira-proxy
+        servicePort: 80

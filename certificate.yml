@@ -4,4 +4,4 @@ metadata:
   name: jira-proxy
 spec:
   domains:
-    - jiraproxy.noc.grooveops.io
+    - jiraproxy.paygo.noc.grooveops.io
