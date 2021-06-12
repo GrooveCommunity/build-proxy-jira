@@ -6,7 +6,6 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: lb-jira-proxy
     networking.gke.io/managed-certificates: jira-proxy
     kubernetes.io/ingress.allow-http: "false"
-    kubernetes.io/ingress.class: "gce"
 spec: 
   rules:
   - http: 
