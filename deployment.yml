@@ -28,13 +28,4 @@ spec:
             port: APP_PORT
           initialDelaySeconds: 3
           periodSeconds: 3
-        readinessProbe:
-          initialDelaySeconds: 3
-          periodSeconds: 5
-          successThreshold: 3
-          failureThreshold: 3
-          httpGet:
-            scheme: HTTP
-            path: /healthy
-            port: 80
 

@@ -5,6 +5,8 @@ metadata:
   labels:
     app: jira-proxy
     service: jira-proxy
+  annotations:
+    cloud.google.com/backend-config: '{"default": "jira-proxy-backendconfig"}'
 spec:
   selector:
     app: jira-proxy
