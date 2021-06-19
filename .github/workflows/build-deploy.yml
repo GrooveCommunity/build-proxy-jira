@@ -6,7 +6,7 @@ on:
     - '**'
 
 env:
-  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  PROJECT_ID: ${{ secrets.GKE_NOC_PROJECT }}
   GKE_REGION: us-central1
   GKE_CLUSTER: noc
   IMAGE: jira-proxy
@@ -30,8 +30,8 @@ jobs:
       uses: google-github-actions/setup-gcloud@master
       with:
         version: '290.0.1'
-        service_account_key: ${{ secrets.GKE_SA_KEY }}
-        project_id: ${{ secrets.GKE_PROJECT }}
+        service_account_key: ${{ secrets.GKE_NOC_SA_KEY }}
+        project_id: ${{ secrets.GKE_NOC_PROJECT }}
 
     - name: Configure Docker 
       run: |-
@@ -62,8 +62,8 @@ jobs:
       uses: google-github-actions/setup-gcloud@master
       with:
         version: '290.0.1'
-        service_account_key: ${{ secrets.GKE_SA_KEY }}
-        project_id: ${{ secrets.GKE_PROJECT }}
+        service_account_key: ${{ secrets.GKE_NOC_SA_KEY }}
+        project_id: ${{ secrets.GKE_NOC_PROJECT }}
         
     - name: Get The GKE credentials
       run: |-
