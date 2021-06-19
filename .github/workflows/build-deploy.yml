@@ -79,6 +79,11 @@ jobs:
       run: |-
         sed -i 's/APP_PORT/${{ env.APP_PORT }}/g' deployment.yml
         sed -i 's/TAG_IMAGE/1.0.11.${{ steps.vars.outputs.sha_short }}/g' deployment.yml
+
+    - name: Replace env from secrets
+      run: |-
+        sed -i 's/PROJECT_ID_ENV/${{ secrets.GKE_NOC_PROJECT }}/g' deployment.yml
+        sed -i 's/TOPIC_ID_DISPATCHER_ENV/${{ secrets.TOPIC_ID_DISPATCHER }}/g' deployment.yml
     
     - name: Create deployment 
       run: |-

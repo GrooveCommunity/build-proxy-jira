@@ -22,6 +22,11 @@ spec:
         image: gcr.io/monitoria-groovetech/jira-proxy:TAG_IMAGE
         ports:
         - containerPort: APP_PORT
+        env:
+        - name: PROJECT_ID
+          value: PROJECT_ID_ENV
+        - name: TOPIC_ID_DISPATCHER
+          value: TOPIC_ID_DISPATCHER_ENV
         livenessProbe:
           httpGet:
             path: /healthy
