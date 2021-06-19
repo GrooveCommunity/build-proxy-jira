@@ -93,10 +93,6 @@ jobs:
       run: |-
         kubectl apply -f certificate.yml -n paygo
 
-    - name: Create backend config
-      run: |-
-        kubectl apply -f jira-proxy-backendconfig.yml -n paygo
-
     - name: Service deploy
       run: |-
         kubectl apply -f service.yml -n paygo
