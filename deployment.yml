@@ -27,6 +27,8 @@ spec:
           value: PROJECT_ID_ENV
         - name: TOPIC_ID_DISPATCHER
           value: TOPIC_ID_DISPATCHER_ENV
+        - name: TOPIC_ID_METRICS
+          value: TOPIC_ID_METRICS_ENV
         livenessProbe:
           httpGet:
             path: /healthy
