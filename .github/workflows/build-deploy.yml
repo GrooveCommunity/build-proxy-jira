@@ -86,6 +86,8 @@ jobs:
         sed -i 's/PROJECT_ID_ENV/${{ secrets.GKE_NOC_PROJECT }}/g' deployment.yml
         sed -i 's/TOPIC_ID_DISPATCHER_ENV/${{ secrets.TOPIC_ID_DISPATCHER }}/g' deployment.yml
         sed -i 's/TOPIC_ID_METRICS_ENV/${{ secrets.TOPIC_ID_METRICS }}/g' deployment.yml
+        sed -i 's/DISCORD_CHANNEL_ID_ENV/${{ secrets.DISCORD_CHANNEL_ID }}/g' deployment.yml
+        sed -i 's/TOKEN_DISPATCHER_PAYGO_DISCORD_ENV/${{ secrets.TOKEN_DISPATCHER_PAYGO_DISCORD }}/g' deployment.yml
     
     - name: Create deployment 
       run: |-
