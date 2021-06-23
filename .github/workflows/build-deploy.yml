@@ -13,7 +13,7 @@ env:
   APP_PORT: 9275
   MAIN_REPO_NAME: jira-proxy
   DEP_REPO_NAME: glib-noc-event-structs
-  VERSION: 1.0.36
+  VERSION: 1.0.37
 
 jobs:
   build_and_deploy_docker:
