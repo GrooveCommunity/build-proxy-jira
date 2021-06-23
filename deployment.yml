@@ -30,9 +30,9 @@ spec:
         - name: TOPIC_ID_METRICS
           value: TOPIC_ID_METRICS_ENV
         - name: TOKEN_DISPATCHER_PAYGO_DISCORD
-          value: TOKEN_DISPATCHER_PAYGO_DISCORD_ENV
+          value: "TOKEN_DISPATCHER_PAYGO_DISCORD_ENV"
         - name: DISCORD_CHANNEL_ID
-          value: DISCORD_CHANNEL_ID_ENV
+          value: "DISCORD_CHANNEL_ID_ENV"
         livenessProbe:
           httpGet:
             path: /healthy
