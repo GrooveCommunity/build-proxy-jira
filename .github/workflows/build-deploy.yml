@@ -14,7 +14,7 @@ env:
   MAIN_REPO_NAME: jira-proxy
   DEP_STRUCTS_REPO_NAME: glib-noc-event-structs
   DEP_STORAGE_REPO_NAME: glib-cloud-storage
-  VERSION: 1.1.3
+  VERSION: 1.1.4
 
 jobs:
   build_and_deploy_docker:
